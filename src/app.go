@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func Sum(number1 int, numebr2 int) int {
-	return number1 + numebr2;
+func Sum(x int, y int) int {
+	return x + y;
 }
 
 func main() {
