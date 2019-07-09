@@ -1,7 +1,7 @@
 FROM golang:1.12 as builder
 
 WORKDIR $GOPATH/src/mypackage/myapp/
-COPY ./src .
+COPY ./src/sum .
 # Using go get.
 RUN go get -d -v
 # Build the binary.
