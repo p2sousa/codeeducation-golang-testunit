@@ -8,5 +8,5 @@ func Sum(x int, y int) int {
 
 func main() {
 	res := Sum(5, 5)
-    fmt.Println("5+5 =", res)
+    fmt.Println("5+5 = ", res)
 }
