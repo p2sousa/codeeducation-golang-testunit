@@ -4,11 +4,13 @@ steps:
   name: 'gcr.io/cloud-builders/go'
   args: ['build', '-o', '/go/bin/app']
   env: ['GOPATH=.']
+  env: ['PROJECT_ROOT=src']
 
 - id: 'Test app'
   name: 'gcr.io/cloud-builders/go'
   args: ['test', '-v','./']
   env: ['GOPATH=.']
+  env: ['PROJECT_ROOT=src']
 
 - id: 'Build image'
   name: 'gcr.io/cloud-builders/docker'
