@@ -1,16 +1,16 @@
 steps:
 
-- id: 'Install app'
+- id: 'Instalando aplicativo GO'
   name: 'gcr.io/cloud-builders/go'
   args: ['install', 'sum']
   env: ['GOPATH=.']
 
-- id: 'Test app'
+- id: 'Executando Testes'
   name: 'gcr.io/cloud-builders/go'
   args: ['test', '-v','./...']
   env: ['GOPATH=.']
 
-- id: 'Build image'
+- id: 'Criando Build da Imagem'
   name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/app', '.']
 
