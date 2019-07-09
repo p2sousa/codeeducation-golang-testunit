@@ -5,8 +5,8 @@ COPY ./src .
 # Using go get.
 RUN go get -d -v
 # Build the binary.
-RUN go build -o /go/bin/main -ldflags "-s -w"
+RUN go build -o /go/bin/app -ldflags "-s -w"
 
 FROM scratch
-COPY --from=builder /go/bin/main /main
-ENTRYPOINT ["/main"]
+COPY --from=builder /go/bin/app /app
+ENTRYPOINT ["/app"]
