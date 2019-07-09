@@ -1,0 +1,18 @@
+steps:
+
+- id: 'Install app'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['install', 'main']
+  env: ['GOPATH=.']
+
+
+- id: 'Test app'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test', '-v','main']
+  env: ['GOPATH=.']
+
+- id: 'Build image'
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/main', '.']
+
+images: ['gcr.io/$PROJECT_ID/main'
